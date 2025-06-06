@@ -36,7 +36,7 @@ if (empty($fname) || empty($lname) || empty($email) || empty($passwd)) {
                 if ($res) {
                     // Redirigir a la página de inicio de sesión
                     echo "<script>
-                    alert('Usuario creado exitosamente. Redirigiendo al inicio de sesión.'); window.location.href='login.html';
+                    alert('Usuario creado exitosamente. Redirigiendo al inicio de sesión.'); window.location.href='../login.html';
                     </script>";
                 } else {
                     $error = "Error al registrar el usuario. Intenta más tarde.";
@@ -50,6 +50,6 @@ if (empty($fname) || empty($lname) || empty($email) || empty($passwd)) {
 
 // Si hay un error, mostrarlo
 if ($error) {
-    echo "<script>alert('$error'); window.location.href='signup.html';</script>";
+    echo "<script>alert('$error'); window.location.href='../register.html';</script>";
 }
 ?>

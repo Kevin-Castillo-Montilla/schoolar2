@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+<link rel="icon" type="image/png" href="../src/icons/student.png" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -133,7 +133,12 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
             </li>
-
+                        <!-- Nav Item - Users -->
+            <li class="nav-item">
+                <a class="nav-link" href="../src/backend/list_users.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Users</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -323,7 +328,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span id="user-name" class="mr-2 d-none d-lg-inline text-gray-600 small">Cargando...</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -343,7 +348,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="../src/backend/logout.php">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -500,7 +505,24 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('../src/backend/get_user.php')  // Asegúrate de que esta ruta sea correcta
+        .then(response => response.json())
+        .then(data => {
+            const userNameSpan = document.getElementById("user-name");
+            if (data.username) {
+                userNameSpan.textContent = data.username;  // Mostrar el primer nombre del usuario
+            } else {
+                userNameSpan.textContent = "Invitado";  // Si no hay usuario, mostrar "Invitado"
+            }
+        })
+        .catch(error => {
+            console.error("Error al obtener el nombre de usuario:", error);
+            document.getElementById("user-name").textContent = "Error";
+        });
+}); 
+</script>
 </body>
 
 </html>
