@@ -45,7 +45,7 @@
             echo "<td>" . $row['lastname'] . "</td>";
             echo "<td>" . $row['email'] . "</td>";
             echo "<td>" . $row['status'] . "</td>";
-            echo "<td><img src='../icons/jugador.png' width='50' height='50' style='object-fit: cover; border-radius:0%;'></td>";
+            echo "<td><img src='../icons/jugador.png' width='50' height='50 ' style='object-fit: cover  ;'></td>";
             echo "<td>";
             echo "<a href=''><img src='../icons/edicion.png' width='20'></a>";
             echo "<a href=''><img src='../icons/bote-de-basura-mas.png' width='20'></a>";

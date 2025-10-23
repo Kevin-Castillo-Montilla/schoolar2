@@ -1,17 +1,17 @@
 <?php
 //config connection
-$host = "aws-0-us-east-1.pooler.supabase.com";
+/*$host = "aws-0-us-east-1.pooler.supabase.com";
 $port = "6543";
 $dbname = "postgres";
 $user = "postgres.fyaevelnvphpaymvcpiv";
-$password = "1080040202";
+$password = "1080040202";*/
 
-/*$host = "localhost";
+$host = "localhost";
 $port = "5432";
 $dbname = "schoolar";
 $user = "postgres";
-$password = "unicesmag";
-*/
+$password = "1080040202";
+
 //create connection psql(parametros)
 $conn = pg_connect("
 host = $host
