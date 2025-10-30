@@ -33,10 +33,10 @@ if (empty($fname) || empty($lname) || empty($email) || empty($passwd)) {
                 $stmt = pg_prepare($conn, "insert_user", "INSERT INTO users (firstname, lastname, email, password) VALUES ($1, $2, $3, $4)");
                 $res = pg_execute($conn, "insert_user", array($fname, $lname, $email, $enc_pass));
 
-                if ($res) {
+              if ($res) {
                     // Redirigir a la página de inicio de sesión
                     echo "<script>
-                    alert('Usuario creado exitosamente. Redirigiendo al inicio de sesión.'); window.location.href='../login.html';
+                    window.location.href='../login.html';
                     </script>";
                 } else {
                     $error = "Error al registrar el usuario. Intenta más tarde.";
